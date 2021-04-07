@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+        #main {
+            margin: 0 auto;
+            width: 800px;
+        }
+        #p {
+            width: 100%;;
+            background-color: #80bdff;
+            display: block;
+            height: 100px;
+        }
+        p {
+            height: 50px;
+            width: 320px;
+            color: white;
+            display: block;
+            font-size: 20px;
+            position: absolute;
+            right: -326px;
+            top: 0;
+            text-align: right;
+        }
+    </style>
+    <script>
+        var w;
+        var i = -326;
+        function fun() {
+            w = window.innerWidth;
+            setInterval(fun2,50)
+        }
+        function fun2() {
+            document.getElementById("txt_p").style.right = i + 'px';
+            i +=5;
+            if (i > w+20) {
+                i = -300;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="p">
+    <p id="txt_p"> آموزش جاوا اسکریپ در سایت فنی و حرفه ای</p>
+</div><!---->
+<div id="main">
+    <input type="submit" value="شروع " onclick="fun()" style="margin: 0 auto;padding: 10px">
+</div><!-- main -->
+</body>
+</html>
