@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        #main {
+            margin: 0 auto;
+            width: 800px;
+        }
+        #txt{
+            font-size: 24px;
+            height: auto;
+            background-color: #eeeeee;
+            width: 90%;
+            padding: 28px;
+            min-height: 40px;
+            line-height: 40px;
+        }
+        #pro{
+            font-size: 24px;
+            height: auto;
+            background-color: #04b606;
+            width: 90%;
+            padding: 28px;
+            min-height: 40px;
+            line-height: 40px;
+        }
+    </style>
+    <script>
+        var txt;
+        var length_txt;
+        var i = 0;
+        var are = [];
+        var tim;
+        var number = document.getElementById("txt").innerHTML;
+
+        function fun() {
+            txt = document.getElementById('txt').innerHTML;
+            length_txt = txt.length;
+            if(length_txt==0){
+                alert("شما یک بار این کار را انجام دادید ")
+                return false;
+            }
+            document.getElementById('txt').innerHTML = '';
+            are = txt.split("");
+            tim = setInterval(fun2,150);
+
+            function fun2() {
+                var pro = document.getElementById("pro");
+                //  pro = pro.replace("_", "")
+                pro.innerHTML = pro.innerHTML.replace("_", "");
+                pro.innerHTML += are[i] + "_";
+                i++;
+
+                if (i == length_txt) {
+                    pro.innerHTML = pro.innerHTML.replace("_", "");
+                    clearTimeout(tim);
+                }//if
+            }//fun2
+        } //fun
+
+    </script>
+</head>
+<body>
+<div id="main">
+    <p id="txt">از تابع ()concat  برای چسباندن یا متصل کردن و همچنین اضافه کردن دو يا چند متغير رشته ای به هم کمک گرفته می شود.
+    </p>
+    <input type="submit" value="کلیک کنید " onclick="fun()" style="padding: 10px">
+
+    <p id="pro"></p>
+
+
+</div><!-- main -->
+
+</body>
+</html>
