@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var ser;
+        var time;
+        var i = 0;
+        var m=0;
+        function fun2(val) {
+            clearInterval(time);
+            document.getElementById("img1").textContent=m;
+            ser = val.value;
+            time = setInterval(fun, ser);
+        }
+        function fun() {
+
+            document.getElementById("img1").textContent = i++;
+        }
+    </script>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            direction: rtl;
+        }
+
+        #main {
+            margin: 0 auto;
+            width: 600px;
+            height: auto;
+        }
+
+        .tamren {
+            background-color: #ffffff;
+            height: auto;
+            width: 100%;
+            padding: 45px;
+            float: right;
+            border: 1px solid #cccccc;
+        }
+
+        .btn {
+            padding: 10px 20px;
+        }
+
+        #img1 {
+            width: 200px;
+            height: 100px;
+            background-color: #80bdff;
+            color: #ffffff;
+            margin: 0 auto;
+            font-size: 65px;
+            text-align: center;
+            line-height: 50px;
+            padding: 20px;
+        }
+    </style>
+
+
+</head>
+<body>
+<div id="main">
+    <div class="tamren">
+        <p id="img1"></p>
+        <div style="text-align:center;margin-top: 10px ">
+            <button class="btn" value="3000" onclick="fun2(this)"> سرعت کم = 3000 </button>
+            <button class="btn" value="1000" onclick="fun2(this)"> سرعت متوسط = 1000</button>
+            <button class="btn" value="100" onclick="fun2(this)"> سرعت سریع = 100</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
