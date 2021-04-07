@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function (ev) {
+
+            for (i = 1; i <= 9; i++) {
+                var main = document.getElementById('main');
+                var div = document.createElement('div');
+                div.className = 'div_item';
+
+                var aa = document.createElement('a');
+                aa.href = '#';
+                aa.className='item-a';
+
+                var title = document.createElement('h3');
+                var pt = document.createElement('p');
+
+                var pric = document.createElement('p');
+                var pric_span = document.createElement('span');
+                pric_span.className = 'pric_span';
+                var pric_txt = document.createTextNode('قیمت');
+
+
+                var yers = document.createElement('p');
+                var yers_span = document.createElement('span');
+                yers_span.className = 'yers_span';
+                var yers_txt = document.createTextNode('سال تولید');
+
+                title.className = 'title';
+                pt.className = 'pt1';
+                pric.className = 'pric';
+                yers.className = 'yers';
+                var tex1;
+                var tex2;
+                var tex3;
+                var tex4;
+                var img = new Image(200, 140);
+                img.src = "img/pic" + i + ".jpg";
+                img.className = 'div-img';
+                img.onclick = function () {
+                    alert(" بهترین راانتخاب  کردید ")
+                };
+
+                main.appendChild(div);
+                div.appendChild(aa);
+                div.appendChild(title);
+                div.appendChild(pt);
+                div.appendChild(pric);
+                pric_span.appendChild(pric_txt);
+                pric.appendChild(pric_span);
+                div.appendChild(yers);
+                yers_span.appendChild(yers_txt);
+                yers.appendChild(yers_span);
+                switch (i) {
+                    case 1:
+                        txt1 = document.createTextNode("2019 Dodge Charger");
+                        tex2 = document.createTextNode("270,000,000");
+                        tex3 = document.createTextNode("2019");
+                        tex4 = document.createTextNode("Explorer ST models get an up-tuned version of the Platinum’s turbocharged 3.0-liter EcoBoost V-6 that pumps\n" +
+                            "            out 400 horsepower and 415 pounds-feet of torque (compared with 365 hp and 380 pounds-feet). A 10-speed\n" +
+                            "            automatic remains the only transmission and the ST comes with standard four-wheel drive.");
+
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+
+                        break;
+                    case 2:
+                        txt1 = document.createTextNode(" Audi 695");
+                        tex2 = document.createTextNode("621,000,000");
+                        tex3 = document.createTextNode("2015");
+                        tex4 = document.createTextNode(" In place of the Hybrid’s hesitation off the line, the ST charges forward with charming predictability as you tip the accelerator pedal in. Power flows easily from a stop, to pass and to charge up on-ramps — it’s an engine that responds quickly and a transmission that also dials in the right gear without hesitation (much like the Explorer Platinum). ");
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+                        break;
+                    case 3:
+                        txt1 = document.createTextNode(" Audi2020");
+                        tex2 = document.createTextNode("621,000,000");
+                        tex3 = document.createTextNode("2018");
+                        tex4 = document.createTextNode("Credit is also due to the 4WD system that, according to a handy graphic, gives all four wheels a good dose of power on launches. This does remove some of the urgent feeling you can experience in purely rear-wheel-drive vehicles, but the added stability to the acceleration is a welcome payoff to me in this situation.");
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+                        break;
+                    case 4:
+                        txt1 = document.createTextNode(" Audi 2014");
+                        tex2 = document.createTextNode("157,200,000");
+                        tex3 = document.createTextNode("2018");
+                        tex4 = document.createTextNode(" \n" +
+                            "By Brian Wong\n" +
+                            "\n" +
+                            "The redesigned 2020 Ford Explorer has a bit of a split introduced for the new model year: the Hybrid and the ST. Our post from earlier this week focused on the Hybrid and a .");
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+                        break;
+                    case 5:
+                        txt1 = document.createTextNode(" Audi 2020");
+                        tex2 = document.createTextNode("221,000,000");
+                        tex3 = document.createTextNode("2017");
+                        tex4 = document.createTextNode(" few of its shortcomings in the name of efficiency. But while in Portland, Ore., I also spent an afternoon with the performance-focused Explorer ST and found it to be refreshing");
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+                        break;
+                    case 6:
+                        txt1 = document.createTextNode(" Audi nfw4");
+                        tex2 = document.createTextNode("148,700,000");
+                        tex3 = document.createTextNode("2012");
+                        tex4 = document.createTextNode("few of its shortcomings in the name of efficiency. But while in Portland, Ore., I also spent an afternoon with the performance-focused Explorer ST and found it to be refreshing ");
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+                        break;
+                    case 7:
+                        txt1 = document.createTextNode(" Audi 2016");
+                        tex2 = document.createTextNode("512,000,000");
+                        tex3 = document.createTextNode("2016");
+                        tex4 = document.createTextNode("Credit is also due to the 4WD system that, according to a handy graphic, gives all four wheels a good dose of power on payoff to me in this situation. ");
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+                        break;
+                    case 8:
+                        txt1 = document.createTextNode(" Audi 215");
+                        tex2 = document.createTextNode("221,500,000");
+                        tex3 = document.createTextNode("2020");
+                        tex4 = document.createTextNode("few of its shortcomings in the name of efficiency. But while in Portland, Ore., I also spent an afternoon with the performance-focused Explorer ST and found it to be refreshingfew of its shortcomings in  performance-focused Explorer ST and found it to be refreshing ");
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+                        break;
+                    case 9:
+                        txt1 = document.createTextNode(" Audi2017");
+                        tex2 = document.createTextNode("150,000,000");
+                        tex3 = document.createTextNode("2017");
+                        tex4 = document.createTextNode("Credit is also due to the 4WD system that, according to a handy graphic, gives all four wheels a good dose of power on payoff to me in this situation. ");
+                        title.appendChild(txt1);
+                        pt.appendChild(tex4);
+                        pric.appendChild(tex2);
+                        yers.appendChild(tex3);
+                        break;
+                }//switch
+
+
+                aa.appendChild(img)
+            }
+        }
+    </script>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            margin: 0 auto;
+            width: 1200px;
+            height: auto;
+            display: block;
+            background-color: #efefef;
+
+        }
+
+        .div_item {
+            width: 380px;
+            height: 400px;
+            margin: 8px;
+            border: 1px solid #ccc6c6;
+            float: left;
+            position: relative;
+        }
+        .div_item:hover {
+            border: 1px solid black;
+        }
+        .item-a {
+            float: left;
+            text-decoration: none;
+            display: block;
+            width: 195px;
+            height: 144px;
+            border: 1px solid crimson;
+            margin-left: 9px;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+        .div-img {
+            margin-left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .title {
+            float: right;
+            padding: 10px 5px;
+            width: 156px;
+            background-color: #ccc;
+            text-align: right;
+            font-size: 17px;
+            margin-top: 11px;
+        }
+
+        .pric {
+            padding: 10px;
+            width: 333px;
+            background-color: #ccc;
+            font-size: 24px;
+            margin: 5px auto;
+            color: #364d6c;
+            text-align: center;
+            float: right;
+            margin-right: 14px;
+            position: absolute;
+            bottom: 60px;
+            left: 14px;
+        }
+
+        .pric_span {
+            width: 50px;
+            height: 100%;
+            float: right;
+        }
+
+        .yers {
+            padding: 10px;
+            width: 333px;
+            background-color: #ccc;
+            font-size: 24px;
+            margin: 5px auto;
+            color: #364d6c;
+            text-align: center;
+            float: right;
+            margin-right: 14px;
+            position: absolute;
+            bottom: 5px;
+            left: 14px;
+        }
+        .yers_span {
+            width: 80px;
+            height: 100%;
+            float: right;
+        }
+        .pt1 {
+            padding: 5px;
+            width: 335px;
+            direction: rtl;
+            text-align: right;
+            margin-left: 15px;
+            position: relative;
+            right: -14px;
+            z-index: -10;
+        }
+    </style>
+</head>
+<body>
+<div id="main"></div>
+
+</body>
+</html>
