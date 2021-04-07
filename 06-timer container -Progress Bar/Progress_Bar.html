@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        body{
+            direction:rtl;
+        }
+        #main {
+            margin: 0 auto;
+            width: 800px;
+            background-color: #eeeeee;
+        }
+
+        #d1 {
+            padding: 20px;
+            text-align: center;
+            height: 400px;
+        }
+        #time {
+            padding: 20px;
+            text-align: center;
+            height: 100px;
+            width: 150px;
+            background-color: #80bdff;
+            color: white;
+            font-size: 40px;
+            margin: 0 auto;
+
+        }
+        #time span{
+            color: white;
+            font-size: 40px;
+            float: left;
+            height: 100px;
+            width: 50px;
+        }
+        .btn {
+            width: 100px;
+            height: 50px;
+            padding: 10px;
+            text-align: center;
+            line-height: 25px;
+        }
+        #color{
+            height: 100%;
+            background-color: #0ac5ff;
+            width:0;
+            display: block;
+        }
+    </style>
+    <script>
+        var ss = 59;
+        var mm;
+        var r;
+        var e;
+        var a=11.666;
+        var b=3.888;
+        var c=2.3;
+        var number;
+        var color=0;
+        var width;
+        var h;
+
+        function fun(val) {
+           color=0;
+           number=0;
+            document.getElementById("color").style.width='0';
+            ss = 0;
+            clearTimeout(e);
+            clearTimeout(r);
+             mm = val.value;
+             h=mm;
+            if(mm==1){
+                number=a;
+            }
+            if(mm==3){
+                number=b;
+            }
+            if(mm==5){
+                number=c;
+            }
+            e = setTimeout(fun2,100);
+
+        }
+        function fun2() {
+
+            var s = document.getElementById("s");
+            var m = document.getElementById("m");
+            if(ss<10){
+                s.textContent="0"+ss;
+            }else{
+                s.textContent=ss;
+            }
+            if(mm<10){
+                m.textContent="0"+mm;
+            }else{
+                m.textContent=mm;
+            }
+            if((mm==0) && (ss==0)){
+                return false;
+            }
+            ss=ss-1;
+
+            if(ss<0){
+                ss=59;
+                mm=mm-1;
+
+            }
+            color+=number;
+            document.getElementById("color").style.width=color+'px';
+            r = setTimeout(fun2,1000);
+        }
+        function reset() {
+            clearTimeout(e);
+            clearTimeout(r);
+            document.getElementById("s").innerHTML="";
+            document.getElementById("m").innerHTML="";
+             ss = 0;
+            var color=0;
+            document.getElementById("color").style.width=color+'px';
+        }
+        function pose() {
+            width= document.getElementById("color").style.width;
+
+            clearTimeout(e);
+            clearTimeout(r);
+
+        }
+        function start() {
+            document.getElementById("color").style.width=width;
+            e = setTimeout(fun2,100);
+        }
+    </script>
+</head>
+<body>
+<div id="main">
+    <div id="d1">
+
+        <div id="time">
+            <span id="m"></span> <span>:</span><span id="s"></span>
+        </div>
+<br>
+        <input class="btn" type="button" value="5" onclick="fun(this)">
+        <input class="btn" type="button" value="3" onclick="fun(this)">
+        <input class="btn" type="button" value="1" onclick="fun(this)">
+        <br><br>
+
+        <input class="btn" type="button" value="reset" onclick="reset()">
+        <input class="btn" type="button" value="pose" onclick="pose()">
+        <input class="btn" type="button" value="start" onclick="start()">
+        <div style="width: 700px;border: 1px solid #9b9b9b;height: 35px;margin-top: 20px">
+            <div id="color"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
