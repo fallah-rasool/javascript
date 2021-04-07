@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+        html,body{
+            padding: 0;
+            margin: 0;
+            direction: rtl;
+        }
+        #main {
+            margin: 0 auto;
+            width: 600px;
+            height: auto;
+        }
+
+        .tamren{
+            background-color: #cccccc;
+            height: auto;
+            width: 100%;
+            padding: 25px;
+            float: right;
+        }
+        .right{
+            width: 20%;
+            float: right;
+        }
+        .left{
+            width: 460px;
+            height: 419px;
+            background-color: #0c5460;
+            float: right;
+        }
+        .red,.blue,.yellow,.green,.white{
+            width: 80px;
+            height:60px;
+            margin-bottom:10px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .red{background-color: red}
+        .blue{background-color: blue}
+        .yellow{background-color: yellow}
+        .green{background-color: green}
+        .white{background-color: white}
+
+
+    </style>
+    <script>
+        function color_bak(val) {
+            var x=val.innerHTML;
+
+            document.getElementById("namaesh").style.backgroundColor=x;
+        }
+    </script>
+</head>
+<body>
+<div id="main">
+    <div class="tamren">
+      <div class="right">
+          <button id="red" class="red" onclick="color_bak(this);">red</button>
+          <button id="green" class="green" onclick="color_bak(this);">green</button>
+          <button id="yellow" class="yellow" onclick="color_bak(this);">yellow</button>
+          <button id="blue" class="blue" onclick="color_bak(this);">blue</button>
+          <button id="white" class=" white" onclick="color_bak(this);">white</button>
+      </div>
+      <div id="namaesh" class="left"></div>
+    </div> <!--t1-->
+</div>
+</body>
+</html>
