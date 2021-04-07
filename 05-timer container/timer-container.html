@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Iransans';
+            src: url('../fonts/Iransans.woff');
+        url('../fonts/Iransans.eot') format('eot'),
+        url('../fonts/Iransans.woff2') format('woff2'),
+        url('../fonts/Iransans.ttf') format('truetype');
+            font-style: normal;
+            font-weight: normal;
+        }
+        body {
+            background-color: #e0f7fa;
+        }
+        .timer-container {
+            width: 400px;
+            background-color:#00bcd4;
+            padding: 50px 50px 40px;
+            border-radius: 10px;
+            margin: 120px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-family: Iransans;
+        }
+        .input-wrap input {
+            width: 100%;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 0;
+            font-size: 20px;
+            height: 43px;
+        }
+        .input-wrap button {
+            display: block;
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: 0;
+            margin: 25px auto ;
+            font-size: 18px;
+            color: #fff;
+            background-color: #006064;
+            cursor: pointer;
+        }
+        .timer-wrap {
+            font-size: 65px;
+            text-align: center;
+            color: #fff;
+        }
+        #alt{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height:100%;
+            background-color: #cccccc;
+            text-align: center;
+            display: none;
+        }
+        #alt h3{
+            font-size: 12px;
+            line-height: 8;
+        }
+        #error{
+            position: absolute;
+            top: 5px;
+            right:5px;
+            width: 32px;
+            height:32px;
+            background: url("error.png") no-repeat center;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var remainingSec;
+        var interval;
+        function tick(){
+            var min = Math.floor(remainingSec / 60);
+            var sec = remainingSec - (min * 60);
+            var timerWrap = document.getElementsByClassName('timer-wrap')[0];
+            if( sec < 10 ) {
+                sec = '0' + sec;
+                if(min == 0){
+                    timerWrap.style.color = 'red';
+                }
+            }
+            if( sec == 0 && min == 0 ){
+                clos2();
+                clearInterval(interval);
+            }
+            timerWrap.innerHTML = min + ' : ' + sec;
+            remainingSec--;
+        }
+        function timer() {
+            var value = document.getElementById('input-no').value;
+            if(isNaN(value)){
+                alert('یک عدد وارد کنید');
+            } else {
+                remainingSec = value * 60;
+                interval = setInterval(tick, 1000);
+            }
+        }
+        function clos1() {
+            document.getElementById("alt").style.display= "none";
+        }
+        function clos2() {
+            document.getElementById("alt").style.display= "block";
+        }
+    </script>
+</head>
+<body>
+<div class="timer-container" style="position: relative">
+    <div class="input-wrap">
+        <input id="input-no" type="text" placeholder="یک عدد وارد کنید">
+    </div>
+    <div class="timer-wrap">
+        <button style="padding:10px 20px" onclick="timer()">شروع</button>
+    </div>
+    <div id="alt">
+        <span id="error" onclick="clos1();"> </span>
+        <h2> زمان تمام شد </h2>
+    </div>
+</div>
+</body>
+</html>
